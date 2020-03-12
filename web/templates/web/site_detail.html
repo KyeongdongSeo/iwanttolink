@@ -1,0 +1,11 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <div class="date">
+            {{ site.created_date }}
+        </div>
+        <h1>{{ site.name }}</h1>
+        <p>{{ site.url }} {{ site.status }}</p>
+    </div>
+{% endblock %}
