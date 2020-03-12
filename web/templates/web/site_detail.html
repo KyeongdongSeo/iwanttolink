@@ -2,12 +2,13 @@
 
 {% block content %}
     <div class="post">
-        <div class="date">
-            {{ site.created_date }}
-        </div>
         <a class="btn btn-default" href="{% url 'site_edit' pk=site.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-defalut" href="{% url 'site_remove' pk=site.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <a class="btn btn-defalut" href="{% url 'site_remove' pk=site.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
         <h1>{{ site.name }}</h1>
-        <p>{{ site.url }} {{ site.status }}</p>
+        <div class="date">
+            등록일: {{ site.created_date }}
+        </div>
+        <p>도메인: {{ site.url }}</p>
+        <p>상 태: {{ site.status }}</p>
     </div>
 {% endblock %}

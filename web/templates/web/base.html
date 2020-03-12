@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>I want to link site</title>
+        <title>I want link site</title>
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -14,7 +14,7 @@
                 <a href="{% url 'site_dead_list' %}" class="top-menu"><span class="glyphicon glyphicon-eye-close"></span></a>
                 <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
             {% endif %}
-            <h1><a href="/">I want to link site</a></h1>
+            <h1><a href="/">I want link<font color="black">.</font>site</a></h1>
         </div>
 
         <div class="content container">
