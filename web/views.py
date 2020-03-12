@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def site_list(request):
+    return render(request, 'web/site_list.html', {})
