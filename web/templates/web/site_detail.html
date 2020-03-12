@@ -6,6 +6,7 @@
             {{ site.created_date }}
         </div>
         <a class="btn btn-default" href="{% url 'site_edit' pk=site.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-defalut" href="{% url 'site_remove' pk=site.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         <h1>{{ site.name }}</h1>
         <p>{{ site.url }} {{ site.status }}</p>
     </div>
