@@ -4,7 +4,7 @@
     {% for site in sites %}
         <div class="post">
             <p class="date">created: {{ site.created_date }}</p>
-            <h1><a href="{% url 'site_detail' pk=site.pk}">{{ site.name }}</a></h1>
+            <h1><a href="{% url 'site_detail' pk=site.pk %}">{{ site.name }}</a></h1>
             <p>{{ site.url }} {{ site.status }}</p>
         </div>
     {% empty %}
