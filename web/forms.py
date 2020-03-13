@@ -5,4 +5,4 @@ from .models import Site
 class SiteForm(forms.ModelForm):
     class Meta:
         model = Site
-        fields = ('name', 'url',)
+        fields = ('name', 'url', 'status',)
