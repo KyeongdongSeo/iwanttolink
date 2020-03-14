@@ -5,6 +5,6 @@ from web.models import Site
 
 
 class SiteViewSet(viewsets.ModelViewSet):
-    queryset = Site.objects.filter(status=200).order_by('-created_date')
+    queryset = Site.objects.filter(status=200).order_by('?')
     serializer_class = SiteSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
