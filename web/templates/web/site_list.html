@@ -7,7 +7,7 @@
                 <p>created: {{ site.created_date }}</p>
             </div>
             <h1><a href="{% url 'site_detail' pk=site.pk %}">{{ site.name }}</a></h1>
-            <p>{{ site.url }} {{ site.status }}</p>
+            <p>{{ site.url }} | {{ site.status }} | {{ site.priority }}</p>
         </div>
     {% endfor %}
 {% endblock %}
