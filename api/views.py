@@ -6,6 +6,6 @@ from web.models import Site
 
 
 class SiteViewSet(viewsets.ModelViewSet):
-    queryset = Site.objects.filter(status=200).order_by('-priority', '?')
+    queryset = Site.objects.filter(status=200).order_by('-priority', '?')[:10]
     serializer_class = SiteSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
