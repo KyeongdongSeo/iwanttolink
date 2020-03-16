@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.contrib.auth import views
 
 from rest_framework import routers
-from api.views import SiteViewSet
+from api.views import SiteViewSet, LogView
 
 
 router = routers.DefaultRouter()
@@ -29,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', views.login, name='login'),
     path('accounts/logout/', views.logout, name='logout', kwargs={'next_page': '/'}),
+    path('api/log/', LogView.as_view(), name='log'), 
     path('api/', include(router.urls)),
     path('', include('web.urls')),
 ]
