@@ -5,7 +5,7 @@
         <div class="post">
             <p class="date">created: {{ site.created_date }}</p>
             <h1><a href="{% url 'site_detail' pk=site.pk %}">{{ site.name }}</a></h1>
-            <p>{{ site.url }} | {{ site.status }} | {{ site.priority }}</p>
+            <p><a href="{{ site.url }}">{{ site.url }}</a> | {{ site.status }} | {{ site.priority }}</p>
         </div>
     {% empty %}
         <p>There are no dead sites!</p>
