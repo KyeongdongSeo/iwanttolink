@@ -1,3 +1,4 @@
+import datetime
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -18,7 +19,9 @@ class LogView(APIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get(self, request, format=None):
-        logs = Log.objects.all()
+        today = datetime.date.today()
+        logs = Log.objects.filter(click_date__gte=today)
+        #logs = Log.objects.all()
         serializer = LogSerializer(logs, many=True)
         return Response(serializer.data)
 
