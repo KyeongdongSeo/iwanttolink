@@ -8,7 +8,7 @@ from .forms import SiteForm
 
 @login_required
 def site_list(request):
-    sites = Site.objects.filter(status=200).order_by('-created_date')
+    sites = Site.objects.filter(Q(status=200)|Q(status=503)).order_by('-created_date')
     return render(request, 'web/site_list.html', {'sites': sites})
 
 @login_required
