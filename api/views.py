@@ -1,4 +1,5 @@
 import datetime
+from django.db.models import Q
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import permissions
@@ -10,7 +11,7 @@ from web.models import Site, Log
 
 
 class SiteViewSet(viewsets.ModelViewSet):
-    queryset = Site.objects.filter(status=200).order_by('-priority', '?')
+    queryset = Site.objects.filter(Q(status=200)|Q(status=503)).order_by('-priority', '?')
     serializer_class = SiteSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
